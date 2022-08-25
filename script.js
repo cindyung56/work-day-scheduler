@@ -10,8 +10,8 @@ var eventsArray;
 function init(){
     currentDay.text(moment().format("dddd, MMMM D, YYYY"));
     eventStorage();
-    // console.log(eventsArray);
     createTimeblocks();
+    updateTimeblocks();
 }
 
 // get events from localStorage, if there are no events then just initialize the array
@@ -22,7 +22,6 @@ function eventStorage(){
         localStorage.setItem("events", JSON.stringify(eventsArray));
     }
 }
-
 
 // create the timeblocks with timestamps
 function createTimeblocks(){
@@ -59,7 +58,22 @@ function createTimeblocks(){
     }
 }
 
+// parse localStorage and update values of textboxes with previous events
+function updateTimeblocks(){
+    eventsArray = JSON.parse(localStorage.getItem("events"));
+    for (var i = 0; i < eventsArray.length; i++){
+        var iObjectTime = eventsArray[i].time;
+        console.log(iObjectTime);
 
+        for (var j = 0; j < $(".container").children().length; j++){
+            var blockTime = $(".container").children().eq(j).children().eq(0).eq(0).text();  
+            if (iObjectTime === blockTime){
+                $(".container").children().eq(j).children().eq(1).eq(0).text(eventsArray[i].event);
+            }
+        }
+        
+    }
+}
 
 
 
@@ -69,11 +83,19 @@ timeblockContainer.on("click", function(event){
 
     if (element.matches("i")){
         console.log("Save button pressed");
-        var currentTimeBlock = $(element).parent().parent()[0];
+        var currentTimeBlock = $(element).parent().parent().eq(0);
         var childrenObject = $(currentTimeBlock).children();
+        console.log(childrenObject);
 
         var objectTime = $(childrenObject[0]).text();
         var objectEvent = $(childrenObject[1]).val();
+
+
+        for (var i = 0; i < eventsArray.length; i++){
+            if (eventsArray[i].time == objectTime){
+                eventsArray.splice(i, 1);
+            }
+        }
         eventsArray.push({time: objectTime, event: objectEvent});
         localStorage.setItem("events", JSON.stringify(eventsArray));
     }
