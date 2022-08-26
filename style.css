@@ -1,3 +1,5 @@
+/* Element Selectors */
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -12,6 +14,8 @@ textarea {
   border-left: 1px solid black;
   padding: 10px;
 }
+
+/* Class Selectors */
 
 .jumbotron {
   text-align: center;
@@ -42,6 +46,8 @@ textarea {
   border-top: 1px dashed #000000;
 }
 
+/* changed font color to black for past, present, and future
+was originally white but it did not appear well on the timeblocks */
 .past {
   background-color: #d3d3d3;
   color: black;
