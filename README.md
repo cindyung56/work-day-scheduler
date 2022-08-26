@@ -14,5 +14,5 @@ The user can click on the text area to input their events for the day. However, 
 
 Link to GitHub repository: https://github.com/cindyung56/work-day-scheduler
 
-Link to page: 
+Link to page: https://cindyung56.github.io/work-day-scheduler/
 
