@@ -1,33 +1,18 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
-## Your Task
+## About
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+This webpage is a Work Day Scheduler that allows the user to put down all of their duties for the day. This webpage is great for people who need to write down their duties for the day and come back to it to update their daily schedule. The header shows the current day, date, and time, while the body of the page loads timeblocks for each hour of the day from 9am to 5pm (normal work hours).
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+![The webpage shows the current day and time, and all the timeblocks with their previously saved duties](./images/image-01.jpg)
 
-## User Story
+The timeblocks are colored based on the user's computer's time. In the picture above, the current time is 1:41pm so the 1PM block is colored red for present. The blocks after 1PM are colored green for future events, while the blocks before are colored grey for past events.
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+The user can click on the text area to input their events for the day. However, this doesn't save automatically. If the user wants to save their events, they have to choose the save button to the right of each time block. It will only save the text to the direct left of the save button they click on. This will trigger the program to get their text and save it in local storage. Whenever the page is refreshed, the textarea will remain the same as they left it until they edit/erase the textarea again and save once more!
 
-## Acceptance Criteria
+## Links
 
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+Link to GitHub repository: https://github.com/cindyung56/work-day-scheduler
+
+Link to page: 
+
